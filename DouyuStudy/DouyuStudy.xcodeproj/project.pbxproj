@@ -36,49 +36,14 @@
 		0C1D536521CB4671000FDA12 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0CCFE7BE21CB656400BA5D33 /* Follow */,
+				0CCFE7BF21CB656400BA5D33 /* Home */,
+				0CCFE7BB21CB656400BA5D33 /* Live */,
+				0CCFE7BC21CB656400BA5D33 /* Profile */,
+				0CCFE7BD21CB656400BA5D33 /* Tools */,
 				0C1D536B21CB4671000FDA12 /* Main */,
-				0C1D536621CB4671000FDA12 /* Home */,
-				0C1D536A21CB4671000FDA12 /* Live */,
-				0C1D536921CB4671000FDA12 /* Fellow */,
-				0C1D536821CB4671000FDA12 /* Profile */,
-				0C1D536721CB4671000FDA12 /* Tools */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		0C1D536621CB4671000FDA12 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		0C1D536721CB4671000FDA12 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tools;
-			sourceTree = "<group>";
-		};
-		0C1D536821CB4671000FDA12 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		0C1D536921CB4671000FDA12 /* Fellow */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Fellow;
-			sourceTree = "<group>";
-		};
-		0C1D536A21CB4671000FDA12 /* Live */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Live;
 			sourceTree = "<group>";
 		};
 		0C1D536B21CB4671000FDA12 /* Main */ = {
@@ -115,6 +80,41 @@
 				0C2DF64E21CA237800D3E58A /* Info.plist */,
 			);
 			path = DouyuStudy;
+			sourceTree = "<group>";
+		};
+		0CCFE7BB21CB656400BA5D33 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		0CCFE7BC21CB656400BA5D33 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		0CCFE7BD21CB656400BA5D33 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		0CCFE7BE21CB656400BA5D33 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		0CCFE7BF21CB656400BA5D33 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
