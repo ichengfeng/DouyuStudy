@@ -84,6 +84,7 @@
 		0C1D536B21CB4671000FDA12 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0C2DF64621CA237700D3E58A /* Main.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -109,7 +110,6 @@
 			children = (
 				0C1D536521CB4671000FDA12 /* Classes */,
 				0C2DF64221CA237700D3E58A /* AppDelegate.swift */,
-				0C2DF64621CA237700D3E58A /* Main.storyboard */,
 				0C2DF64921CA237800D3E58A /* Assets.xcassets */,
 				0C2DF64B21CA237800D3E58A /* LaunchScreen.storyboard */,
 				0C2DF64E21CA237800D3E58A /* Info.plist */,
