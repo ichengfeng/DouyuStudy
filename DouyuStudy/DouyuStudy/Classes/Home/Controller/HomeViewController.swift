@@ -23,17 +23,19 @@ class HomeViewController: UIViewController {
     
     private lazy var pageContentView : PageContentView = {[weak self] in
         //1.确定内容的frame
-        let contentFrame = CGRect(x: 0, y: 88+kTitleViewH, width: kScreenW, height: kScreenH-88-kTitleViewH)
+        let contentFrame = CGRect(x: 0, y: 88+kTitleViewH, width: kScreenW, height: kScreenH-88-kTitleViewH-83)
         
         //2.确定所有的自控制器
         var childVcs = [UIViewController]()
-        for _ in 0..<4 {
+        childVcs.append(RecommendViewController())
+        for _ in 0..<3 {
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             childVcs.append(vc)
         }
         
         let contentView = PageContentView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
+        contentView.delegate = self
         return contentView
     }()
     
@@ -84,3 +86,9 @@ extension HomeViewController :PageTitleViewDelegate {
     }
 }
 
+// MARK: - 遵守PageContentViewDelegate
+extension HomeViewController : PageContentViewDelegate {
+    func pageContentView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        pageTitleView.setTitleWithProgress(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    }
+}
