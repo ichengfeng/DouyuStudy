@@ -12,15 +12,16 @@ private let kTitleViewH : CGFloat = 40;
 
 class HomeViewController: UIViewController {
     
-    private lazy var pageTitleView : PageTitleView = {
+    private lazy var pageTitleView : PageTitleView = {[weak self] in
         //kNavigationBarH+kStatusBarH
         let titleFrame = CGRect(x: 0, y: 88 , width: kScreenW, height: kTitleViewH)
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
+        titleView.delegate = self
         return titleView;
     }()
     
-    private lazy var pageContentView : PageContentView = {
+    private lazy var pageContentView : PageContentView = {[weak self] in
         //1.确定内容的frame
         let contentFrame = CGRect(x: 0, y: 88+kTitleViewH, width: kScreenW, height: kScreenH-88-kTitleViewH)
         
@@ -75,3 +76,11 @@ extension HomeViewController {
     }
   
 }
+
+// MARK: - 遵守PageTitleViewDelegate
+extension HomeViewController :PageTitleViewDelegate {
+    func pageTitleView(titleView: PageTitleView, selectIndex index: Int) {
+        pageContentView.setCurrentIndex(currentIndex: index)
+    }
+}
+

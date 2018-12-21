@@ -13,11 +13,11 @@ private let ContentCellID = "ContentCellID"
 class PageContentView: UIView {
 
     private var childVcs : [UIViewController]
-    private var parentViewController : UIViewController
+    private weak var parentViewController : UIViewController?
     
-    private lazy var collectionView : UICollectionView = {
+    private lazy var collectionView : UICollectionView = {[weak self] in
        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = self.bounds.size
+        layout.itemSize = (self?.bounds.size)!
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
@@ -27,12 +27,13 @@ class PageContentView: UIView {
         collectionView.isPagingEnabled = true
         collectionView.bounces = false
         collectionView.dataSource = self;
+        collectionView.delegate = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: ContentCellID)
         
         return collectionView
     }()
     
-    init(frame: CGRect, childVcs : [UIViewController], parentViewController : UIViewController) {
+    init(frame: CGRect, childVcs : [UIViewController], parentViewController : UIViewController?) {
         
         self.childVcs = childVcs
         self.parentViewController = parentViewController;
@@ -54,7 +55,7 @@ extension PageContentView {
     private func setupUI() {
         //1、将所有的自控制器添加父控制器中
         for childVc in childVcs {
-            parentViewController.addChild(childVc)
+            parentViewController?.addChild(childVc)
         }
         //2、添加UICollectionView,用于在cell中存放控制器的view
         addSubview(collectionView)
@@ -62,6 +63,7 @@ extension PageContentView {
     }
 }
 
+// MARK: - UICollectionViewDataSource
 extension PageContentView : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -73,6 +75,10 @@ extension PageContentView : UICollectionViewDataSource {
         //1、创建Cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCellID, for: indexPath)
         //2、给cell设置内容
+        for view in cell.contentView.subviews {
+            view.removeFromSuperview()
+        }
+        
         let childVC = childVcs[indexPath.item]
         childVC.view.frame = cell.contentView.bounds
         cell.contentView.addSubview(childVC.view)
@@ -80,3 +86,17 @@ extension PageContentView : UICollectionViewDataSource {
     }
     
 }
+
+// MARK: - UICollectionViewDelegate
+extension PageContentView : UICollectionViewDelegate {
+    
+}
+
+extension PageContentView {
+    func setCurrentIndex(currentIndex : Int) {
+        let offset = CGFloat(currentIndex)*collectionView.frame.width
+        collectionView.setContentOffset(CGPoint(x: offset, y: 0), animated: false)
+    }
+}
+
+
