@@ -32,6 +32,8 @@
 		6D6907FCB74967E724790BA4 /* Pods_DouyuStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86242CA9BA97AE93741859F /* Pods_DouyuStudy.framework */; };
 		71D824AE21CFB89100D47303 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D824AD21CFB89100D47303 /* LiveViewController.swift */; };
 		71D824B021CFCF4E00D47303 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D824AF21CFCF4E00D47303 /* NetworkTools.swift */; };
+		71D824B321CFDC8B00D47303 /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D824B221CFDC8B00D47303 /* RecommendViewModel.swift */; };
+		71D824B521CFDF9800D47303 /* NSDate_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D824B421CFDF9800D47303 /* NSDate_Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		4B6ED5AC14395453315D8ACC /* Pods-DouyuStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouyuStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouyuStudy/Pods-DouyuStudy.release.xcconfig"; sourceTree = "<group>"; };
 		71D824AD21CFB89100D47303 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		71D824AF21CFCF4E00D47303 /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		71D824B221CFDC8B00D47303 /* RecommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
+		71D824B421CFDF9800D47303 /* NSDate_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDate_Extension.swift; sourceTree = "<group>"; };
 		B86242CA9BA97AE93741859F /* Pods_DouyuStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouyuStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FDCAFE73BA5ECD9802C914 /* Pods-DouyuStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouyuStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DouyuStudy/Pods-DouyuStudy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,6 +262,7 @@
 			children = (
 				0C58885121CB7D91000B4ACA /* UIBarButtonItem-Extension.swift */,
 				0C58885B21CB9B24000B4ACA /* UIColor-Extension.swift */,
+				71D824B421CFDF9800D47303 /* NSDate_Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 		0CCFE7BF21CB656400BA5D33 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				71D824B121CFDC5400D47303 /* ViewModel */,
 				0C58882E21CB77AA000B4ACA /* Controller */,
 				0C58882C21CB77AA000B4ACA /* Model */,
 				0C58882D21CB77AA000B4ACA /* View */,
@@ -327,6 +333,14 @@
 				4B6ED5AC14395453315D8ACC /* Pods-DouyuStudy.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		71D824B121CFDC5400D47303 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				71D824B221CFDC8B00D47303 /* RecommendViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,7 +482,9 @@
 				0C58885C21CB9B24000B4ACA /* UIColor-Extension.swift in Sources */,
 				0C58885221CB7D91000B4ACA /* UIBarButtonItem-Extension.swift in Sources */,
 				0C58886921CCDF7B000B4ACA /* CollectionPrettyCell.swift in Sources */,
+				71D824B521CFDF9800D47303 /* NSDate_Extension.swift in Sources */,
 				0C58886521CCD84C000B4ACA /* CollectionNormalCell.swift in Sources */,
+				71D824B321CFDC8B00D47303 /* RecommendViewModel.swift in Sources */,
 				0C58884F21CB7910000B4ACA /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

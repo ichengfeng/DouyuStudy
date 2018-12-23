@@ -15,6 +15,14 @@ enum MethodType {
 }
 
 class NetWorkTools {
+    
+    ///   请求方法简单封装
+    ///
+    /// - Parameters:
+    ///   - type: 请求类型post/get
+    ///   - URLString: URL
+    ///   - parameters: 参数，默认为空
+    ///   - finishedCallback: 将请求结果返回
     class func requestData(_ type : MethodType,URLString : String, parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : Any) -> ()) {
         // 1.获取类型
         let method = type == .get ? HTTPMethod.get : HTTPMethod.post
