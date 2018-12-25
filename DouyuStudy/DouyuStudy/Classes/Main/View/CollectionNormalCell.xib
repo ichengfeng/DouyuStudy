@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="177" height="139"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="RiT-Dd-aTl" customClass="Img_default">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="RiT-Dd-aTl">
                         <rect key="frame" x="0.0" y="0.0" width="177" height="111"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -76,6 +76,12 @@
                 <constraint firstItem="56E-wk-KJw" firstAttribute="leading" secondItem="RiT-Dd-aTl" secondAttribute="leading" id="zOy-98-jKq"/>
             </constraints>
             <size key="customSize" width="177" height="139"/>
+            <connections>
+                <outlet property="iconImageView" destination="RiT-Dd-aTl" id="FAU-JO-7Ls"/>
+                <outlet property="nickNameLabel" destination="56E-wk-KJw" id="j14-PA-Hjp"/>
+                <outlet property="onlineBtn" destination="X0P-Oh-7BW" id="DJ8-5X-gZJ"/>
+                <outlet property="roomNameLabel" destination="aHd-Cq-NXV" id="q00-R4-IsR"/>
+            </connections>
             <point key="canvasLocation" x="104.8" y="-6.746626686656672"/>
         </collectionViewCell>
     </objects>

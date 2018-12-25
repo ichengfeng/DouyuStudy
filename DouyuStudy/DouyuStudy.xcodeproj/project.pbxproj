@@ -29,6 +29,8 @@
 		0C58886621CCD84C000B4ACA /* CollectionNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C58886421CCD84C000B4ACA /* CollectionNormalCell.xib */; };
 		0C58886921CCDF7B000B4ACA /* CollectionPrettyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C58886721CCDF7B000B4ACA /* CollectionPrettyCell.swift */; };
 		0C58886A21CCDF7B000B4ACA /* CollectionPrettyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C58886821CCDF7B000B4ACA /* CollectionPrettyCell.xib */; };
+		0C81932E21D1D8E500111B64 /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81932D21D1D8E500111B64 /* AnchorGroup.swift */; };
+		0C81933021D1FEE700111B64 /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81932F21D1FEE700111B64 /* AnchorModel.swift */; };
 		6D6907FCB74967E724790BA4 /* Pods_DouyuStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86242CA9BA97AE93741859F /* Pods_DouyuStudy.framework */; };
 		71D824AE21CFB89100D47303 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D824AD21CFB89100D47303 /* LiveViewController.swift */; };
 		71D824B021CFCF4E00D47303 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D824AF21CFCF4E00D47303 /* NetworkTools.swift */; };
@@ -61,6 +63,8 @@
 		0C58886421CCD84C000B4ACA /* CollectionNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionNormalCell.xib; sourceTree = "<group>"; };
 		0C58886721CCDF7B000B4ACA /* CollectionPrettyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPrettyCell.swift; sourceTree = "<group>"; };
 		0C58886821CCDF7B000B4ACA /* CollectionPrettyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionPrettyCell.xib; sourceTree = "<group>"; };
+		0C81932D21D1D8E500111B64 /* AnchorGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
+		0C81932F21D1FEE700111B64 /* AnchorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
 		4B6ED5AC14395453315D8ACC /* Pods-DouyuStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouyuStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouyuStudy/Pods-DouyuStudy.release.xcconfig"; sourceTree = "<group>"; };
 		71D824AD21CFB89100D47303 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		71D824AF21CFCF4E00D47303 /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
@@ -133,13 +137,6 @@
 				0C2DF64E21CA237800D3E58A /* Info.plist */,
 			);
 			path = DouyuStudy;
-			sourceTree = "<group>";
-		};
-		0C58882C21CB77AA000B4ACA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		0C58882D21CB77AA000B4ACA /* View */ = {
@@ -267,6 +264,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		0C81932C21D1D68F00111B64 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C81932D21D1D8E500111B64 /* AnchorGroup.swift */,
+				0C81932F21D1FEE700111B64 /* AnchorModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0CCFE7BB21CB656400BA5D33 /* Live */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,10 +316,10 @@
 		0CCFE7BF21CB656400BA5D33 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				71D824B121CFDC5400D47303 /* ViewModel */,
 				0C58882E21CB77AA000B4ACA /* Controller */,
-				0C58882C21CB77AA000B4ACA /* Model */,
 				0C58882D21CB77AA000B4ACA /* View */,
+				71D824B121CFDC5400D47303 /* ViewModel */,
+				0C81932C21D1D68F00111B64 /* Model */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -451,12 +457,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DouyuStudy/Pods-DouyuStudy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -479,12 +487,14 @@
 				0C58885A21CB9878000B4ACA /* PageContentView.swift in Sources */,
 				0C58885621CB8472000B4ACA /* PageTitleView.swift in Sources */,
 				71D824AE21CFB89100D47303 /* LiveViewController.swift in Sources */,
+				0C81932E21D1D8E500111B64 /* AnchorGroup.swift in Sources */,
 				0C58885C21CB9B24000B4ACA /* UIColor-Extension.swift in Sources */,
 				0C58885221CB7D91000B4ACA /* UIBarButtonItem-Extension.swift in Sources */,
 				0C58886921CCDF7B000B4ACA /* CollectionPrettyCell.swift in Sources */,
 				71D824B521CFDF9800D47303 /* NSDate_Extension.swift in Sources */,
 				0C58886521CCD84C000B4ACA /* CollectionNormalCell.swift in Sources */,
 				71D824B321CFDC8B00D47303 /* RecommendViewModel.swift in Sources */,
+				0C81933021D1FEE700111B64 /* AnchorModel.swift in Sources */,
 				0C58884F21CB7910000B4ACA /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,11 +10,14 @@ import UIKit
 
 private let kTitleViewH : CGFloat = 40;
 
+
+
 class HomeViewController: UIViewController {
     
     private lazy var pageTitleView : PageTitleView = {[weak self] in
         //kNavigationBarH+kStatusBarH
-        let titleFrame = CGRect(x: 0, y: 88 , width: kScreenW, height: kTitleViewH)
+        let h : CGFloat = (self?.navigationController?.navigationBar.frame.maxY)!
+        let titleFrame = CGRect(x: 0, y: h , width: kScreenW, height: kTitleViewH)
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
         titleView.delegate = self
@@ -22,8 +25,11 @@ class HomeViewController: UIViewController {
     }()
     
     private lazy var pageContentView : PageContentView = {[weak self] in
+        let h : CGFloat = (self?.navigationController?.navigationBar.frame.maxY)!
+        let tabbarH : CGFloat = (self?.tabBarController?.tabBar.frame.height)!
+    
         //1.确定内容的frame
-        let contentFrame = CGRect(x: 0, y: 88+kTitleViewH, width: kScreenW, height: kScreenH-88-kTitleViewH-83)
+        let contentFrame = CGRect(x: 0, y: h+kTitleViewH, width: kScreenW, height: kScreenH-h-kTitleViewH-tabbarH)
         
         //2.确定所有的自控制器
         var childVcs = [UIViewController]()

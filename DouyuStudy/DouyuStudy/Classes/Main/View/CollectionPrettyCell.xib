@@ -32,11 +32,17 @@
                         <color key="backgroundColor" white="0.050000000000000003" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="EOl-Eb-Fcb"/>
-                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="118" id="hS8-4e-FnN"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="hS8-4e-FnN"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="highlightedColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BeautyGirl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpQ-m2-xmc">
                         <rect key="frame" x="0.0" y="135.5" width="162" height="14.5"/>
@@ -75,6 +81,12 @@
                 <constraint firstAttribute="trailing" secondItem="CpQ-m2-xmc" secondAttribute="trailing" id="zKd-39-pYt"/>
             </constraints>
             <size key="customSize" width="162" height="179"/>
+            <connections>
+                <outlet property="cityBtn" destination="ThK-9f-gR3" id="ub6-SO-teb"/>
+                <outlet property="iconImageView" destination="bcQ-H0-FTG" id="2dw-fm-P6x"/>
+                <outlet property="nickNameLabel" destination="CpQ-m2-xmc" id="0eQ-AW-e4T"/>
+                <outlet property="onlineBtn" destination="izi-ld-Ivb" id="DFF-Xq-YWV"/>
+            </connections>
             <point key="canvasLocation" x="227.19999999999999" y="212.74362818590706"/>
         </collectionViewCell>
     </objects>
