@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RecommendCycleView" customModule="DouyuStudy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Eeq-Js-TRr">
+                    <rect key="frame" x="0.0" y="1" width="375" height="149"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="grR-0d-DFY">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="zFw-Pn-N40"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="R1H-Bo-P2j"/>
+                    </connections>
+                </collectionView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="I83-cE-gdx">
+                    <rect key="frame" x="326" y="113" width="39" height="37"/>
+                    <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="currentPageIndicatorTintColor" red="0.79290348291397095" green="0.45973312964650936" blue="0.029492889040135483" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="I83-cE-gdx" secondAttribute="trailing" constant="10" id="Ci5-en-Bq5"/>
+                <constraint firstAttribute="bottom" secondItem="I83-cE-gdx" secondAttribute="bottom" id="IbX-kw-wCj"/>
+                <constraint firstAttribute="bottom" secondItem="Eeq-Js-TRr" secondAttribute="bottom" id="Q6V-bp-XnG"/>
+                <constraint firstItem="Eeq-Js-TRr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="U4K-I9-T3Q"/>
+                <constraint firstAttribute="trailing" secondItem="Eeq-Js-TRr" secondAttribute="trailing" id="khN-K5-r80"/>
+                <constraint firstItem="Eeq-Js-TRr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lnI-b9-vuH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="Eeq-Js-TRr" id="XhF-vx-UE1"/>
+                <outlet property="pageControl" destination="I83-cE-gdx" id="Mut-cW-V2b"/>
+            </connections>
+            <point key="canvasLocation" x="138.40000000000001" y="13.493253373313344"/>
+        </view>
+    </objects>
+</document>
