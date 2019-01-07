@@ -15,7 +15,7 @@ class RecommendGameView: UIView {
         didSet {
             //移除前两组数据
             groups?.removeFirst()
-            groups?.removeFirst()
+//            groups?.removeFirst()
             //添加更多组
             let moreGroup = AnchorGroup()
             moreGroup.tag_name = "更多"
