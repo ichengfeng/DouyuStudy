@@ -11,15 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionGameCell" customModule="DouyuStudy" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionGameCell" customModule="DouyuStudy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="英雄联盟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukQ-53-emA">
-                        <rect key="frame" x="0.0" y="65.5" width="80" height="14.5"/>
+                        <rect key="frame" x="0.0" y="60.5" width="80" height="14.5"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14.5" id="NIx-ho-cxk"/>
                         </constraints>
@@ -28,7 +28,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live_cell_default_phone" translatesAutoresizingMaskIntoConstraints="NO" id="zSp-wt-U9U">
-                        <rect key="frame" x="17.5" y="14.5" width="45" height="45"/>
+                        <rect key="frame" x="17.5" y="5.5" width="45" height="45"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="45" id="XZV-I0-YSC"/>
                             <constraint firstAttribute="width" secondItem="zSp-wt-U9U" secondAttribute="height" multiplier="1:1" id="yKu-Pz-3H3"/>
@@ -40,12 +40,22 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
+                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7S-ui-1t9">
+                        <rect key="frame" x="0.0" y="80" width="80" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Ou7-uM-6Gf"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="ukQ-53-emA" secondAttribute="bottom" constant="10" id="6yT-j6-oHT"/>
+                <constraint firstAttribute="trailing" secondItem="y7S-ui-1t9" secondAttribute="trailing" id="7LH-mE-IWt"/>
                 <constraint firstItem="ukQ-53-emA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IVp-0L-sQf"/>
-                <constraint firstItem="zSp-wt-U9U" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-8" id="Wla-Tr-U1u"/>
+                <constraint firstItem="ukQ-53-emA" firstAttribute="top" secondItem="zSp-wt-U9U" secondAttribute="bottom" constant="10" id="OM4-GZ-tgS"/>
+                <constraint firstItem="y7S-ui-1t9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Uf3-Og-yg6"/>
+                <constraint firstItem="zSp-wt-U9U" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-12" id="Wla-Tr-U1u"/>
+                <constraint firstAttribute="bottom" secondItem="y7S-ui-1t9" secondAttribute="bottom" constant="-1" id="ZYf-q3-GMH"/>
                 <constraint firstItem="zSp-wt-U9U" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="vAQ-XZ-TJb"/>
                 <constraint firstAttribute="trailing" secondItem="ukQ-53-emA" secondAttribute="trailing" id="was-tD-MrH"/>
             </constraints>

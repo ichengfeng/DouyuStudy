@@ -14,17 +14,19 @@ class CollectionHeaderView: UICollectionReusableView {
     
     @IBOutlet weak var iconImageView: UIImageView!
     
+    @IBOutlet weak var moreButton: UIButton!
+    
     var group : AnchorGroup? {
         didSet {
             titleLabel.text = group?.tag_name
             iconImageView.image = UIImage(named: group?.small_icon_url ?? "home_header_normal")
         }
     }
-    
-    
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-    
+}
+
+// MARK - 从xib中快速创建的类方法
+extension CollectionHeaderView {
+    class func collectionHeaderView() -> CollectionHeaderView {
+        return Bundle.main.loadNibNamed("CollectionHeaderView", owner: self, options: nil)?.first as! CollectionHeaderView
+    }
 }
