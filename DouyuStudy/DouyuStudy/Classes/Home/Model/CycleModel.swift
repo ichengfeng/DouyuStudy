@@ -25,7 +25,7 @@ class CycleModel: NSObject {
     
     
     //自定义构造函数
-    init(dict : [String : NSObject]) {
+    init(dict : [String : Any]) {
         super.init()
         setValuesForKeys(dict)
     }

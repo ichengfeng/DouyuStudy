@@ -12,9 +12,8 @@
  */
 import UIKit
 
-class RecommendViewModel {
+class RecommendViewModel : BaseViewModel {
     //懒加载属性
-    lazy var anchorGroups : [AnchorGroup] = [AnchorGroup]()
     lazy var cycleModels : [CycleModel] = [CycleModel]()
     private lazy var bigDataGroup : AnchorGroup = AnchorGroup()
     private lazy var prettyGroup : AnchorGroup = AnchorGroup()
@@ -71,23 +70,26 @@ extension RecommendViewModel {
         
         //3.请求后面部分游戏数据
         dGroup.enter()
-        NetWorkTools.requestData(.get, URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters) { (result) in
-            
-            //3.1、将result转成字典类型
-            guard let resultDict = result as? [String : NSObject] else {return}
-            
-            //3.2、根据data的key，获取数组
-            guard let dataArray = resultDict["data"] as? [[String : NSObject]] else {return}
-            
-            //3.3遍历数组，获取字典，并且将字典转成模型对象
-            for dict in dataArray {
-                
-                let group = AnchorGroup(dict: dict)
-                self.anchorGroups.append(group)
-                
-            }
+        loadAnchorData(isGroupData:true, URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameteres: parameters) {
             dGroup.leave()
         }
+//        NetWorkTools.requestData(.get, URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters) { (result) in
+//
+//            //3.1、将result转成字典类型
+//            guard let resultDict = result as? [String : NSObject] else {return}
+//
+//            //3.2、根据data的key，获取数组
+//            guard let dataArray = resultDict["data"] as? [[String : NSObject]] else {return}
+//
+//            //3.3遍历数组，获取字典，并且将字典转成模型对象
+//            for dict in dataArray {
+//
+//                let group = AnchorGroup(dict: dict)
+//                self.anchorGroups.append(group)
+//
+//            }
+//            dGroup.leave()
+//        }
         
         dGroup.notify(queue:DispatchQueue.main) {
             self.anchorGroups.insert(self.prettyGroup, at: 0)
