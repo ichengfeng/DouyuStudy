@@ -14,7 +14,7 @@ class CollectionBaseCell: UICollectionViewCell {
     @IBOutlet weak var nickNameLabel: UILabel!
     
     //定义模型
-    var anchor : AnchorModel? {
+    public var anchor : AnchorModel? {
         didSet {
             guard let anchor = anchor else {return}
             //在线人数
